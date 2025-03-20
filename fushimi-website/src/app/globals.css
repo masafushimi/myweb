@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 248, 248, 248;
+  --primary-color: 26, 42, 87; /* ネイビー */
+  --accent-color: 212, 175, 55; /* ゴールド */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+}
+
+.accent-text {
+  font-family: 'Noto Serif JP', serif;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section-alt {
+  background-color: rgb(var(--background-end-rgb));
+}
+
+.navy-text {
+  color: rgb(var(--primary-color));
+}
+
+.gold-text {
+  color: rgb(var(--accent-color));
+}
+
+.navy-bg {
+  background-color: rgb(var(--primary-color));
+  color: white;
+}
+
+.gold-bg {
+  background-color: rgb(var(--accent-color));
+  color: white;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  border-left: 2px solid rgb(var(--primary-color));
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgb(var(--accent-color));
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: rgb(var(--primary-color));
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: rgba(var(--primary-color), 0.9);
+}
+
+.btn-accent {
+  background-color: rgb(var(--accent-color));
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: rgba(var(--accent-color), 0.9);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .section {
+    padding: 2rem 1rem;
+  }
+}
